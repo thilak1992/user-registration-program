@@ -12,7 +12,7 @@ public class LambdaExpression {
 
 
     /**
-     * Validating the Password using lambda expression
+     * Validate the Password using lambda expression
      * The Lambda expression is used to provide the implementation of an interface
      * which has functional interface.It saves a lot of code.
      *
