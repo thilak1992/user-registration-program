@@ -24,30 +24,30 @@ public class LambdaExpression {
         Taking input from the user
          */
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter Last name you want to check");
-        String lastName = scanner.nextLine();
+        System.out.println("Enter email you want to check");
+        String email = scanner.next();
     /*
     Defining pattern of the input
      */
-        String Last_Name_Pattern = "^[A-Z ][a-z]{3,}";
+        String Email_Pattern = "^[a-zA-Z0-9]+([+_.-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]+[.][a-zA-Z]{2,4}([.][a-zA-Z]{2,4})?";
 
         /*
         Using lambda expression to validate inputs here we are calling interface of UserValidator and making
-        it A object named validateLastName.
+        it A object named validateEmail.
          */
-        UserValidator validateLastName = (lastNameValid) -> lastNameValid.matches(Last_Name_Pattern);
+        UserValidator validateEmail = (emailValid) -> emailValid.matches(Email_Pattern);
 
         /*
-    validateLastName is the object of interface class UserValidator. And we are calling method validate of
-    UserValidator interface class and giving its parameter lastName. what parameter we give to method validate
-    it comes in the argument (lastNameValid) of lambda expression And we can perform any function on it.
+    validateEmail is the object of interface class UserValidator. And we are calling method validate of
+    UserValidator interface class and giving its parameter email. what parameter we give to method validate
+    it comes in the argument (emailValid) of lambda expression And we can perform any function on it.
      */
-        boolean isValid = validateLastName.validate(lastName);
+        boolean isValid = validateEmail.validate(email);
 
         if (isValid) {
-            System.out.println("Last name pattern is valid");
+            System.out.println("email pattern is valid");
         } else {
-            System.out.println("Last name pattern is not valid try again");
+            System.out.println("email pattern is not valid try again");
 
         }
 
