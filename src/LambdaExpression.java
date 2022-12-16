@@ -12,7 +12,7 @@ public class LambdaExpression {
 
 
     /**
-     * Validating the Mobile Number using lambda expression
+     * Validating the Password using lambda expression
      * The Lambda expression is used to provide the implementation of an interface
      * which has functional interface.It saves a lot of code.
      *
@@ -24,30 +24,31 @@ public class LambdaExpression {
         Taking input from the user
          */
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter mobile number you want to check");
-        String mobileNumber = scanner.nextLine();
+        System.out.println("Enter password you want to check");
+        String password = scanner.next();
     /*
     Defining pattern of the input
      */
-        String Mobile_Number_Pattern = "^[0-9]{2}\\s{1}[0-9]{10}$";
+        String Password_Pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}";
+        ;
 
 
         /*
         Using lambda expression to validate inputs here we are calling interface of UserValidator and making
-        it A object named validateMobileNumber.
+        it A object named validatePassword.
          */
-        UserValidator validateMobileNumber = (mobileNumberValid) -> mobileNumberValid.matches(Mobile_Number_Pattern);
+        UserValidator validatePassword = (passwordValid) -> passwordValid.matches(Password_Pattern);
         /*
-    validateMobileNumber is the object of interface class UserValidator. And we are calling method validate of
+    validatePassword is the object of interface class UserValidator. And we are calling method validate of
     UserValidator interface class and giving its parameter mobileNumber. what parameter we give to method validate
-    it comes in the argument (mobileNumberValid) of lambda expression And we can perform any function on it.
+    it comes in the argument (passwordValid) of lambda expression And we can perform any function on it.
      */
-        boolean isValid = validateMobileNumber.validate(mobileNumber);
+        boolean isValid = validatePassword.validate(password);
 
         if (isValid) {
-            System.out.println("Mobile Number pattern is valid");
+            System.out.println("Password pattern is valid");
         } else {
-            System.out.println("Mobile Number pattern is not valid try again");
+            System.out.println("Password pattern is not valid try again");
 
         }
 
