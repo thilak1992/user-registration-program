@@ -27,11 +27,9 @@ public class LambdaExpression {
         System.out.println("Enter password you want to check");
         String password = scanner.next();
     /*
-    Defining pattern of the input
-     */
+    Defining pattern of password
+    */
         String Password_Pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}";
-        ;
-
 
         /*
         Using lambda expression to validate inputs here we are calling interface of UserValidator and making
