@@ -32,7 +32,7 @@ public class LambdaExpression {
         String Password_Pattern = "(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=]).{8,}";
 
         /*
-        Using lambda expression to validate inputs here we are calling interface of UserValidator and making
+        Using lambda expression to validate input here we are calling interface of UserValidator and making
         it A object named validatePassword.
          */
         UserValidator validatePassword = (passwordValid) -> passwordValid.matches(Password_Pattern);
